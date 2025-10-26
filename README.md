@@ -4,13 +4,13 @@
 
 ### Session 1. Python Basics
 
-- Notebook. [molab](https://marimo.new/ber2/3-day-python-data-analysis-course/main/day1/session1_python_basics.py)
+- Notebook. [molab](https://molab.marimo.io/notebooks/nb_oLXS2cLWvB6Wdz3a5hVphc)
 
 ### Session 2. Data Structures
 
-- Notebook. [molab](https://marimo.new/ber2/3-day-python-data-analysis-course/main/day1/session2_data_structures.py)
+- Notebook. [molab](https://molab.marimo.io/notebooks/nb_DoMJEpNacdEypWuCUfo6a8)
 
 ### Practical session
 
-- Notebook. [molab](https://marimo.new/ber2/3-day-python-data-analysis-course/main/day1/practical_python_basics.py)
+- Notebook. [molab](https://molab.marimo.io/notebooks/nb_uhKn1NixnTvHLaerSRW3nv)
 
