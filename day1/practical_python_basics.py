@@ -215,24 +215,24 @@ def _(mo):
 @app.cell
 def _():
     # Write your solution here
-    cart = {}
+    my_cart = {}
 
-    def add_to_cart(cart, product, quantity):
+    def add_to_cart_user(cart, product, quantity):
         # Your code here
         pass
 
-    def get_total_items(cart):
+    def get_total_items_user(cart):
         # Your code here
         pass
 
-    def remove_from_cart(cart, product):
+    def remove_from_cart_user(cart, product):
         # Your code here
         pass
 
     # Test your functions
-    # add_to_cart(cart, "apple", 3)
-    # add_to_cart(cart, "banana", 2)
-    # print(cart)
+    # add_to_cart_user(my_cart, "apple", 3)
+    # add_to_cart_user(my_cart, "banana", 2)
+    # print(my_cart)
     return
 
 
@@ -265,7 +265,7 @@ def _(mo):
 
 @app.cell
 def _():
-    students = [
+    students_data = [
         {"name": "Alice", "age": 20, "grades": [85, 90, 88]},
         {"name": "Bob", "age": 21, "grades": [78, 82, 80]},
         {"name": "Carol", "age": 19, "grades": [92, 95, 93]},
@@ -352,7 +352,7 @@ def _():
     import numpy as np
 
     # Daily sales for 4 weeks
-    daily_sales = np.array([
+    daily_sales_user = np.array([
         1200, 1450, 1100, 1800, 2100, 950, 1350,   # Week 1
         1500, 1600, 1400, 1900, 2200, 1050, 1400,  # Week 2
         1300, 1550, 1200, 1750, 2000, 1000, 1300,  # Week 3
@@ -361,7 +361,7 @@ def _():
 
     # Write your solution here
     # Hint: Use reshape to organize by weeks
-    # sales_by_week = daily_sales.reshape(4, 7)
+    # sales_by_week = daily_sales_user.reshape(4, 7)
     return (np,)
 
 
@@ -387,7 +387,7 @@ def _(mo):
 @app.cell
 def _(np):
     # Daily temperatures (Celsius)
-    temperatures = np.array([
+    temperatures_user = np.array([
         22, 24, 23, 25, 26, 24, 23,
         25, 27, 28, 29, 30, 28, 26,
         24, 23, 22, 21, 20, 19, 18,
@@ -439,40 +439,40 @@ def _(np):
     np.random.seed(42)  # For reproducibility
 
     # Generate data for 100 transactions
-    transaction_ids = list(range(1, 101))
-    products = ["Laptop", "Mouse", "Keyboard", "Monitor", "Headphones"]
-    categories = ["Electronics", "Electronics", "Electronics", "Electronics", "Electronics"]
+    transaction_ids_data = list(range(1, 101))
+    products_data = ["Laptop", "Mouse", "Keyboard", "Monitor", "Headphones"]
+    categories_data = ["Electronics", "Electronics", "Electronics", "Electronics", "Electronics"]
 
     # Random product selection
-    product_choices = [products[i] for i in np.random.randint(0, 5, 100)]
+    product_choices_data = [products_data[i] for i in np.random.randint(0, 5, 100)]
 
     # Sales amounts with some variation
-    base_prices = {"Laptop": 999, "Mouse": 25, "Keyboard": 75, "Monitor": 350, "Headphones": 150}
-    amounts = [base_prices[p] * np.random.uniform(0.8, 1.2) for p in product_choices]
+    base_prices_data = {"Laptop": 999, "Mouse": 25, "Keyboard": 75, "Monitor": 350, "Headphones": 150}
+    amounts_data = [base_prices_data[p] * np.random.uniform(0.8, 1.2) for p in product_choices_data]
 
     # Quantities
-    quantities = np.random.randint(1, 5, 100)
+    quantities_data = np.random.randint(1, 5, 100)
 
     # Add some "bad" data intentionally
-    amounts[10] = -50  # Negative value (error)
-    amounts[25] = 0    # Zero value (cancelled?)
-    amounts[50] = None # Missing value
+    amounts_data[10] = -50  # Negative value (error)
+    amounts_data[25] = 0    # Zero value (cancelled?)
+    amounts_data[50] = None # Missing value
 
     # Create the dataset as a list of dictionaries
-    sales_data = []
+    sales_data_project = []
     for i in range(100):
-        sales_data.append({
-            "transaction_id": transaction_ids[i],
-            "product": product_choices[i],
-            "quantity": int(quantities[i]),
-            "amount": amounts[i]
+        sales_data_project.append({
+            "transaction_id": transaction_ids_data[i],
+            "product": product_choices_data[i],
+            "quantity": int(quantities_data[i]),
+            "amount": amounts_data[i]
         })
 
-    print(f"✓ Created dataset with {len(sales_data)} transactions")
+    print(f"✓ Created dataset with {len(sales_data_project)} transactions")
     print(f"\nFirst 3 transactions:")
     for i in range(3):
-        print(f"  {sales_data[i]}")
-    return
+        print(f"  {sales_data_project[i]}")
+    return (sales_data_project,)
 
 
 @app.cell
@@ -522,7 +522,7 @@ def _(mo):
 @app.cell
 def _():
     # Clean the data here
-    clean_sales_data = []
+    clean_sales_data_user = []
 
     # Your code here
     pass
@@ -591,9 +591,9 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(np):
     # Convert amounts to NumPy array
-    # amounts_array = np.array([t["amount"] for t in clean_data])
+    # amounts_array_user = np.array([t["amount"] for t in clean_data_user])
 
     # Your statistical analysis here
     pass

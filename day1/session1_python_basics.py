@@ -152,8 +152,8 @@ def _():
 
     # String formatting (f-strings)
     customer_id = 12345
-    message = f"Welcome, {full_name}! Your ID is {customer_id}"
-    print(message)
+    welcome_message = f"Welcome, {full_name}! Your ID is {customer_id}"
+    print(welcome_message)
 
     # Useful string methods
     print(f"Uppercase: {full_name.upper()}")
@@ -174,20 +174,20 @@ def _():
     monthly_sales = 75000
 
     if monthly_sales >= 100000:
-        performance = "Excellent"
-        bonus = monthly_sales * 0.10
+        sales_performance = "Excellent"
+        sales_bonus = monthly_sales * 0.10
     elif monthly_sales >= 75000:
-        performance = "Good"
-        bonus = monthly_sales * 0.05
+        sales_performance = "Good"
+        sales_bonus = monthly_sales * 0.05
     elif monthly_sales >= 50000:
-        performance = "Fair"
-        bonus = monthly_sales * 0.02
+        sales_performance = "Fair"
+        sales_bonus = monthly_sales * 0.02
     else:
-        performance = "Needs Improvement"
-        bonus = 0
+        sales_performance = "Needs Improvement"
+        sales_bonus = 0
 
-    print(f"Performance: {performance}")
-    print(f"Bonus: ${bonus:,.2f}")
+    print(f"Performance: {sales_performance}")
+    print(f"Bonus: ${sales_bonus:,.2f}")
     return
 
 
@@ -203,15 +203,15 @@ def _():
 @app.cell
 def _():
     # For loop: processing a list of values
-    daily_sales = [1200, 1450, 1100, 1800, 2100, 950, 1350]
+    daily_sales_list = [1200, 1450, 1100, 1800, 2100, 950, 1350]
 
-    total = 0
-    for sale in daily_sales:
-        total += sale  # Same as: total = total + sale
+    weekly_total = 0
+    for sale in daily_sales_list:
+        weekly_total += sale  # Same as: weekly_total = weekly_total + sale
 
-    average = total / len(daily_sales)
-    print(f"Total weekly sales: ${total:,.2f}")
-    print(f"Average daily sales: ${average:,.2f}")
+    weekly_average = weekly_total / len(daily_sales_list)
+    print(f"Total weekly sales: ${weekly_total:,.2f}")
+    print(f"Average daily sales: ${weekly_average:,.2f}")
     return
 
 
@@ -303,8 +303,8 @@ def _():
     def greet():
         return "Hello, Data Analyst!"
 
-    message = greet()
-    print(message)
+    greeting_message = greet()
+    print(greeting_message)
     return
 
 
@@ -318,15 +318,15 @@ def _():
         return final_price
 
     # Using the function
-    original = 100
-    result = calculate_discount(original, 0.20)
-    print(f"Original: ${original}")
-    print(f"After 20% discount: ${result}")
+    original_price = 100
+    discounted_result = calculate_discount(original_price, 0.20)
+    print(f"Original: ${original_price}")
+    print(f"After 20% discount: ${discounted_result}")
 
     # Call with different values
-    result2 = calculate_discount(250, 0.15)
+    discounted_result2 = calculate_discount(250, 0.15)
     print(f"\nOriginal: $250")
-    print(f"After 15% discount: ${result2}")
+    print(f"After 15% discount: ${discounted_result2}")
     return
 
 
@@ -343,12 +343,12 @@ def _():
         return total_sales, avg_sales, max_sales
 
     # Using the function
-    weekly_sales = [1200, 1450, 1100, 1800, 2100, 950, 1350]
-    total, average, maximum = calculate_metrics(weekly_sales)
+    weekly_sales_data = [1200, 1450, 1100, 1800, 2100, 950, 1350]
+    metrics_total, metrics_average, metrics_maximum = calculate_metrics(weekly_sales_data)
 
-    print(f"Total: ${total:,.2f}")
-    print(f"Average: ${average:,.2f}")
-    print(f"Maximum: ${maximum:,.2f}")
+    print(f"Total: ${metrics_total:,.2f}")
+    print(f"Average: ${metrics_average:,.2f}")
+    print(f"Maximum: ${metrics_maximum:,.2f}")
     return
 
 
@@ -360,12 +360,12 @@ def _():
         return amount * (1 + tax_rate)
 
     # Use default tax rate
-    price1 = apply_tax(100)
-    print(f"With default tax (8%): ${price1:.2f}")
+    tax_price1 = apply_tax(100)
+    print(f"With default tax (8%): ${tax_price1:.2f}")
 
     # Override with custom tax rate
-    price2 = apply_tax(100, 0.10)
-    print(f"With custom tax (10%): ${price2:.2f}")
+    tax_price2 = apply_tax(100, 0.10)
+    print(f"With custom tax (10%): ${tax_price2:.2f}")
     return
 
 
@@ -373,16 +373,16 @@ def _():
 def _():
     # Variable scope example
     # Global variable
-    company_name = "DataCorp"
+    scope_company_name = "DataCorp"
 
     def generate_report(revenue):
         # Local variable
-        report_title = f"{company_name} Revenue Report"
+        report_title = f"{scope_company_name} Revenue Report"
         summary = f"{report_title}: ${revenue:,.2f}"
         return summary
 
-    report = generate_report(50000)
-    print(report)
+    revenue_report = generate_report(50000)
+    print(revenue_report)
 
     # This would cause an error (report_title is not accessible here):
     # print(report_title)

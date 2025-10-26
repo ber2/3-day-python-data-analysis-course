@@ -109,7 +109,7 @@ def _():
 @app.cell
 def _():
     # Creating dictionaries - representing a customer
-    customer = {
+    customer_dict = {
         "id": 12345,
         "name": "Alice Johnson",
         "email": "alice@example.com",
@@ -118,26 +118,26 @@ def _():
     }
 
     print("Customer information:")
-    print(f"Name: {customer['name']}")
-    print(f"Email: {customer['email']}")
-    print(f"Total spent: ${customer['total_spent']:.2f}")
+    print(f"Name: {customer_dict['name']}")
+    print(f"Email: {customer_dict['email']}")
+    print(f"Total spent: ${customer_dict['total_spent']:.2f}")
 
     # Adding new key-value pairs
-    customer["vip_status"] = True
-    print(f"\nVIP Status: {customer['vip_status']}")
+    customer_dict["vip_status"] = True
+    print(f"\nVIP Status: {customer_dict['vip_status']}")
 
     # Updating values
-    customer["purchases"] += 1
-    customer["total_spent"] += 150.00
-    print(f"Updated purchases: {customer['purchases']}")
-    print(f"Updated total: ${customer['total_spent']:.2f}")
+    customer_dict["purchases"] += 1
+    customer_dict["total_spent"] += 150.00
+    print(f"Updated purchases: {customer_dict['purchases']}")
+    print(f"Updated total: ${customer_dict['total_spent']:.2f}")
     return
 
 
 @app.cell
 def _():
     # Dictionary methods and iteration
-    inventory = {
+    inventory_dict = {
         "laptop": 45,
         "mouse": 120,
         "keyboard": 78,
@@ -146,24 +146,24 @@ def _():
 
     # Iterating over keys
     print("Products in stock:")
-    for product in inventory.keys():
+    for product in inventory_dict.keys():
         print(f"  - {product}")
 
     # Iterating over values
-    print(f"\nTotal items: {sum(inventory.values())}")
+    print(f"\nTotal items: {sum(inventory_dict.values())}")
 
     # Iterating over key-value pairs
     print("\nFull inventory:")
-    for product, quantity in inventory.items():
+    for product, quantity in inventory_dict.items():
         print(f"  {product.capitalize()}: {quantity} units")
 
     # Safe access with .get()
-    tablets = inventory.get("tablet", 0)
+    tablets = inventory_dict.get("tablet", 0)
     print(f"\nTablets in stock: {tablets}")
 
     # Practical: find low stock items
     print("\nLow stock alerts (< 50 units):")
-    for product, quantity in inventory.items():
+    for product, quantity in inventory_dict.items():
         if quantity < 50:
             print(f"  ⚠️  {product}: only {quantity} left!")
     return
@@ -172,13 +172,13 @@ def _():
 @app.cell
 def _():
     # Creating sets - automatically removes duplicates
-    customer_ids = {101, 102, 103, 102, 101, 104}
-    print(f"Unique customers: {customer_ids}")
-    print(f"Count: {len(customer_ids)}")
+    customer_ids_set = {101, 102, 103, 102, 101, 104}
+    print(f"Unique customers: {customer_ids_set}")
+    print(f"Count: {len(customer_ids_set)}")
 
     # Fast membership testing
-    print(f"\nIs customer 102 active? {102 in customer_ids}")
-    print(f"Is customer 999 active? {999 in customer_ids}")
+    print(f"\nIs customer 102 active? {102 in customer_ids_set}")
+    print(f"Is customer 999 active? {999 in customer_ids_set}")
 
     # Set operations
     weekday_customers = {101, 102, 103, 105}
@@ -197,10 +197,10 @@ def _():
     print(f"Weekday only: {weekday_only}")
 
     # Practical: remove duplicates from a list
-    transactions = [101, 102, 101, 103, 102, 101, 104]
-    unique_customers = set(transactions)
-    print(f"\nTransactions: {transactions}")
-    print(f"Unique customers: {len(unique_customers)}")
+    transaction_list = [101, 102, 101, 103, 102, 101, 104]
+    unique_customers_from_transactions = set(transaction_list)
+    print(f"\nTransactions: {transaction_list}")
+    print(f"Unique customers: {len(unique_customers_from_transactions)}")
     return
 
 
@@ -339,7 +339,7 @@ def _():
     import csv
 
     # Writing CSV
-    customers = [
+    customers_csv = [
         ["id", "name", "purchases", "total"],
         [101, "Alice Johnson", 15, 2450.00],
         [102, "Bob Smith", 8, 1320.50],
@@ -349,7 +349,7 @@ def _():
 
     with open("customers.csv", "w", newline="") as file:
         writer = csv.writer(file)
-        writer.writerows(customers)
+        writer.writerows(customers_csv)
 
     print("✓ CSV file written: customers.csv")
 
@@ -366,7 +366,7 @@ def _():
         dict_reader = csv.DictReader(file)
         for row in dict_reader:
             print(f"  Customer {row['id']}: {row['name']} - ${row['total']}")
-    return
+    return (csv,)
 
 
 @app.cell
@@ -375,7 +375,7 @@ def _():
     import json
 
     # Python dictionary
-    customer_data = {
+    customer_json_data = {
         "id": 12345,
         "name": "Alice Johnson",
         "email": "alice@example.com",
@@ -389,22 +389,22 @@ def _():
 
     # Writing JSON
     with open("customer.json", "w") as file:
-        json.dump(customer_data, file, indent=2)
+        json.dump(customer_json_data, file, indent=2)
 
     print("✓ JSON file written: customer.json")
 
     # Reading JSON
     with open("customer.json", "r") as file:
-        loaded_data = json.load(file)
+        loaded_json_data = json.load(file)
 
     print("\nLoaded customer data:")
-    print(f"Name: {loaded_data['name']}")
-    print(f"Email: {loaded_data['email']}")
-    print(f"VIP Status: {loaded_data['vip']}")
+    print(f"Name: {loaded_json_data['name']}")
+    print(f"Email: {loaded_json_data['email']}")
+    print(f"VIP Status: {loaded_json_data['vip']}")
     print(f"\nPurchases:")
-    for purchase in loaded_data['purchases']:
+    for purchase in loaded_json_data['purchases']:
         print(f"  {purchase['date']}: {purchase['product']} - ${purchase['amount']:.2f}")
-    return
+    return (json,)
 
 
 @app.cell
@@ -445,35 +445,35 @@ def _():
 
 
     # Creating objects (instances)
-    laptop = Product("Laptop", 999.99, 50)
-    mouse = Product("Mouse", 25.99, 200)
+    laptop_product = Product("Laptop", 999.99, 50)
+    mouse_product = Product("Mouse", 25.99, 200)
 
-    print(f"Product: {laptop.name}")
-    print(f"Price: ${laptop.price}")
-    print(f"Quantity: {laptop.quantity}")
-    print(f"Total value: ${laptop.get_total_value():,.2f}")
+    print(f"Product: {laptop_product.name}")
+    print(f"Price: ${laptop_product.price}")
+    print(f"Quantity: {laptop_product.quantity}")
+    print(f"Total value: ${laptop_product.get_total_value():,.2f}")
     return (Product,)
 
 
 @app.cell
 def _(Product):
     # Using class methods
-    keyboard = Product("Mechanical Keyboard", 89.99, 30)
+    keyboard_product = Product("Mechanical Keyboard", 89.99, 30)
 
     # Use methods
-    print(f"Initial inventory: {keyboard.quantity}")
-    print(f"Total value: ${keyboard.get_total_value():,.2f}")
+    print(f"Initial inventory: {keyboard_product.quantity}")
+    print(f"Total value: ${keyboard_product.get_total_value():,.2f}")
 
     print("\n--- Selling ---")
-    keyboard.sell(5)
+    keyboard_product.sell(5)
 
     print("\n--- Restocking ---")
-    keyboard.restock(10)
+    keyboard_product.restock(10)
 
     print("\n--- Trying to oversell ---")
-    keyboard.sell(100)
+    keyboard_product.sell(100)
 
-    print(f"\nFinal inventory: {keyboard.quantity}")
+    print(f"\nFinal inventory: {keyboard_product.quantity}")
     return
 
 
@@ -514,24 +514,24 @@ def _():
 
 
     # Using the Customer class
-    alice = Customer(101, "Alice Johnson", "alice@example.com")
+    alice_customer = Customer(101, "Alice Johnson", "alice@example.com")
 
-    print(f"Customer created: {alice.name}")
+    print(f"Customer created: {alice_customer.name}")
     print()
 
     # Make some purchases
-    alice.make_purchase(150.00, "Laptop Case")
-    alice.make_purchase(899.99, "Monitor")
-    alice.make_purchase(45.50, "USB Cable")
+    alice_customer.make_purchase(150.00, "Laptop Case")
+    alice_customer.make_purchase(899.99, "Monitor")
+    alice_customer.make_purchase(45.50, "USB Cable")
 
     # Get summary
     print("\n--- Customer Summary ---")
-    summary = alice.get_summary()
-    for key, value in summary.items():
+    customer_summary = alice_customer.get_summary()
+    for key, value in customer_summary.items():
         print(f"{key}: {value}")
 
-    print(f"\nVIP Status: {alice.is_vip()}")
-    return
+    print(f"\nVIP Status: {alice_customer.is_vip()}")
+    return (Customer,)
 
 
 if __name__ == "__main__":
