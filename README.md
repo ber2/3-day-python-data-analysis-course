@@ -22,15 +22,15 @@
 
 ### Session 1. Python Basics
 
-<!--- Slides. [pdf](https://github.com/ber2/3-day-python-data-analysis-course/blob/main/day1/session1_python_basics.pdf)-->
+- Slides. [pdf](https://github.com/ber2/3-day-python-data-analysis-course/blob/main/day2/session1_pandas_intro.pdf)
 - Notebook. [molab](https://molab.marimo.io/notebooks/nb_D9qdYoxNZTxMHfmwqzTUxw)
 
 ### Session 2. Data Structures
 
-<!--- Slides. [pdf](https://github.com/ber2/3-day-python-data-analysis-course/blob/main/day1/session2_data_structures.pdf)-->
+- Slides. [pdf](https://github.com/ber2/3-day-python-data-analysis-course/blob/main/day2/session2_data_manipulation.pdf)
 - Notebook. [molab](https://molab.marimo.io/notebooks/nb_d4umpHKHc2xgzNQq1zDEfn)
 
 ### Practical session
 
 - Notebook. [molab](https://molab.marimo.io/notebooks/nb_d6xRqgPGdXfdhsoiBFuMka)
-<!--- Solutions. [molab](https://molab.marimo.io/notebooks/nb_wS4LuYB9mTgM8fceoqHXZo)-->
+- Solutions. [molab](https://molab.marimo.io/notebooks/nb_AzJNdvJfnEXWmXUqc8jnMk)
