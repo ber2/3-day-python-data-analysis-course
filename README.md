@@ -49,4 +49,4 @@
 ### Practical session
 
 - Notebook. [molab](https://molab.marimo.io/notebooks/nb_4RjByGWAEmfoZ4TdFCric7)
-<!--- Solutions. [molab](https://molab.marimo.io/notebooks/nb_Hk43W1rTpuwE5DGnCATtL8)-->
+- Solutions. [molab](https://molab.marimo.io/notebooks/nb_Hk43W1rTpuwE5DGnCATtL8)
