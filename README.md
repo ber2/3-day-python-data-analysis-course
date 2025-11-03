@@ -56,14 +56,14 @@
 ### Session 1.
 
 - Notebook. [molab](https://molab.marimo.io/notebooks/nb_QPHug3ibMK4Tmwq2UJQZRb)
-<!--- Solutions. [molab](https://molab.marimo.io/notebooks/nb_Q13w9kR75YZHyHiq3UUpXa)-->
+- Solutions. [molab](https://molab.marimo.io/notebooks/nb_Q13w9kR75YZHyHiq3UUpXa)
 
 ### Session 2.
 
 - Notebook. [molab](https://molab.marimo.io/notebooks/nb_oyoGfPxXAy2ysEiHfVGFhR)
-<!--- Solutions. [molab](https://molab.marimo.io/notebooks/nb_xfx5bNSw4S9wYQVuqWDLjd)-->
+- Solutions. [molab](https://molab.marimo.io/notebooks/nb_xfx5bNSw4S9wYQVuqWDLjd)
 
 ### Session 3.
 
 - Notebook. [molab](https://molab.marimo.io/notebooks/nb_7UzNgx3yUz3j2Ci9uSiiaa)
-<!--- Solutions. [molab](https://molab.marimo.io/notebooks/nb_nMzUqjLZdvu7W21uULA9yF)-->
+- Solutions. [molab](https://molab.marimo.io/notebooks/nb_nMzUqjLZdvu7W21uULA9yF)
